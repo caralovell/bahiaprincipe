@@ -256,15 +256,15 @@ button:disabled {
 </div> 
 
 <div class="sections"> 
-<a class="section-button" href="https://www.barcelo.com/en-es/barcelo-valencia/?_gl=1*qwwnpb*_up*MQ..*_gs*MQ..&gclid=CjwKCAiA86_JBhAIEiwA4i9Ju39HsyKcOV3GDETxjXGUc9kN34ug15i8gLNv7QC9gvOapTiD8ccDqRoC_B0QAvD_BwE&gbraid=0AAAAADpStBNXvZafvq06OpR67cMqFPpWa" data-external>  
+<a class="section-button" href="https://www.bahia-principe.com/es/hoteles-en-jamaica/resort-jamaica/" data-external>  
 <img src="./hotel/hotel2.jpg" alt="Book a room"> 
 <span>Book a room</span> 
 </a> 
-<a class="section-button" href="https://vega.imascono.com/" data-external> 
-<img src="./hotel/asistente1.jpg" alt="Virtual assistant"> 
+<a class="section-button" href="https://imascono.com/tendencias-tecnologicas-hoteles/" data-external> 
+<img src="./hotel/asistente2.jpg" alt="Virtual assistant"> 
 <span>Virtual assistant</span> 
 </a> 
-<a class="section-button" href="./situm.html"> 
+<a class="section-button" href="https://map-viewer.situm.com/oasis?wl=true&lng=en&buildingid=5773&floorid=11952"> 
 <img src="./hotel/wayfinding.jpg" alt="Map view"> 
 <span>Map view</span> 
 </a> 
@@ -274,7 +274,51 @@ button:disabled {
 </div>
 
 </div> 
-</div> 
+</div>
+
+    <!-- TECHNOLOGY PAGE -->
+<div id="technologyPage" class="page">
+  <h2>Robotic Service</h2>
+  <div class="sections" style="grid-template-columns: 1fr; max-width: 900px; margin: 0 auto;">
+
+    <!-- Flipcard 1 -->
+    <div class="flipcard">
+      <div class="flipcard-inner">
+        <div class="flipcard-front">
+          <img src="./hotel/roomservice.jpg" alt="Room Service">
+          <span>Room Service</span>
+        </div>
+        <div class="flipcard-back">
+          <h3 style="color:#696969;">Room Service</h3>
+          <p>
+            Autonomous service robots can deliver food, drinks, towels and amenities
+            directly to guest rooms quickly and efficiently, improving response times
+            and the guest experience.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flipcard 2 -->
+    <div class="flipcard">
+      <div class="flipcard-inner">
+        <div class="flipcard-front">
+          <img src="./hotel/cleaningservice.jpg" alt="Cleaning Service">
+          <span>Cleaning Service</span>
+        </div>
+        <div class="flipcard-back">
+          <h3 style="color:#696969;">Cleaning Service</h3>
+          <p>
+            Robotic cleaning solutions help maintain common areas in optimal condition
+            through automated support tasks, improving cleanliness standards and
+            operational efficiency.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
   
 
 
@@ -383,61 +427,67 @@ document.getElementById("prevSlide").onclick = () => {
 };
 
 
-// --- SURVEY RATINGS ---
 const surveyForm = document.getElementById('surveyForm');
-surveyForm.querySelectorAll('.rating').forEach(rating => {
+if (surveyForm) {
+  surveyForm.querySelectorAll('.rating').forEach(rating => {
     rating.querySelectorAll('span').forEach(emoji => {
-        emoji.addEventListener('click', () => {
-            const alreadySelected = emoji.classList.contains('selected');
-            rating.querySelectorAll('span').forEach(e => e.classList.remove('selected'));
-            if(!alreadySelected) emoji.classList.add('selected');
-            validateSurvey();
-        });
-    });
-});
-surveyForm.querySelectorAll('.number-rating button').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const alreadySelected = btn.classList.contains('selected');
-        btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('selected'));
-        if(!alreadySelected) btn.classList.add('selected');
+      emoji.addEventListener('click', () => {
+        const alreadySelected = emoji.classList.contains('selected');
+        rating.querySelectorAll('span').forEach(e => e.classList.remove('selected'));
+        if (!alreadySelected) emoji.classList.add('selected');
         validateSurvey();
+      });
     });
-});
-const surveySubmit = surveyForm.querySelector('button[type="submit"]');
-surveySubmit.disabled = true;
-surveyForm.addEventListener('submit', e => {
+  });
+
+  surveyForm.querySelectorAll('.number-rating button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const alreadySelected = btn.classList.contains('selected');
+      btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('selected'));
+      if (!alreadySelected) btn.classList.add('selected');
+      validateSurvey();
+    });
+  });
+
+  const surveySubmit = surveyForm.querySelector('button[type="submit"]');
+  if (surveySubmit) surveySubmit.disabled = true;
+
+  surveyForm.addEventListener('submit', e => {
     e.preventDefault();
     showConfirm('Survey submitted! Thank you.');
     surveyForm.reset();
     surveyForm.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
-    surveySubmit.disabled = true;
-});
-    function validateSurvey(){
+    if (surveySubmit) surveySubmit.disabled = true;
+  });
+
+  function validateSurvey() {
     const allRatingsSelected = Array.from(surveyForm.querySelectorAll('.rating'))
-                                  .every(r => r.querySelector('span.selected'));
+      .every(r => r.querySelector('span.selected'));
     const numberRatingSelected = surveyForm.querySelector('.number-rating button.selected') !== null;
-    surveySubmit.disabled = !(allRatingsSelected && numberRatingSelected);
+    if (surveySubmit) surveySubmit.disabled = !(allRatingsSelected && numberRatingSelected);
+  }
 }
 
 
 
-// --- CHECK-IN FORM ---
 const checkinForm = document.querySelector('#checkinPage form');
-const checkinSubmit = checkinForm.querySelector('button[type="submit"]');
-checkinSubmit.disabled = true;
+if (checkinForm) {
+  const checkinSubmit = checkinForm.querySelector('button[type="submit"]');
+  if (checkinSubmit) checkinSubmit.disabled = true;
 
-checkinForm.addEventListener('input', () => {
+  checkinForm.addEventListener('input', () => {
     const requiredFields = checkinForm.querySelectorAll('input[required]');
     const allFilled = Array.from(requiredFields).every(input => input.value.trim() !== '');
-    checkinSubmit.disabled = !allFilled;
-});
+    if (checkinSubmit) checkinSubmit.disabled = !allFilled;
+  });
 
-checkinForm.addEventListener('submit', e => {
+  checkinForm.addEventListener('submit', e => {
     e.preventDefault();
     showConfirm("Your check-in is complete, you may pick up your key from reception and enjoy your stay.");
     checkinForm.reset();
-    checkinSubmit.disabled = true;
-});
+    if (checkinSubmit) checkinSubmit.disabled = true;
+  });
+}
 
 
 // --- NAVBAR CLICK SCROLL TOP ---
