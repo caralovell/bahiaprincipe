@@ -236,7 +236,7 @@ button:disabled {
 <body> 
 <nav id="navbar"> 
 <img src="./hotel/logo.png" alt="Logo" id="ihgLogo"> 
-<img src="./hotel/logovlc.jpg" alt="Logo" id="crowneLogo"> 
+<img src="./hotel/logojamaica.jpg" alt="Logo" id="crowneLogo"> 
 </nav> 
 
 <!-- HOME PAGE --> 
@@ -246,16 +246,13 @@ button:disabled {
 <img src="./hotel/hotel1.jpg" alt="Hotel 1"> 
 <img src="./hotel/hotel2.jpg" alt="Hotel 2"> 
 <img src="./hotel/hotel3.jpg" alt="Hotel 3"> 
-<img src="./hotel/hotel4.jpg" alt="Hotel 4"> 
-<img src="./hotel/hotel5.jpg" alt="Hotel 5"> 
-<img src="./hotel/hotel6.jpg" alt="Hotel 6"> 
 </div> 
     
 <div class="slider-dots" id="sliderDots"></div>
     
 <div class="hero-arrow left" id="prevSlide">‹</div> 
 <div class="hero-arrow right" id="nextSlide">›</div> 
-<p class="intro-text">Welcome to Valencia</p> 
+<p class="intro-text">Welcome to Jamaica</p> 
 </div> 
 
 <div class="sections"> 
@@ -263,133 +260,23 @@ button:disabled {
 <img src="./hotel/room.jpg" alt="Book a room"> 
 <span>Book a room</span> 
 </a> 
-<a class="section-button" href="./situm.html"> 
-<img src="./hotel/situm.jpg" alt="Map view"> 
-<span>Map view</span> 
-</a> 
-<div class="section-button" onclick="navigateTo('servicesPage')"> 
-<img src="./hotel/terrace.jpg" alt="Services"> 
-<span>Facilities</span> 
-</div> 
-<div class="section-button" onclick="navigateTo('accessibilityPage')"> 
-<img src="./hotel/access.jpg" alt="Accessibility"> 
-<span>Accessibility</span> 
-</div> 
 <a class="section-button" href="https://vega.imascono.com/" data-external> 
 <img src="./hotel/totem.jpg" alt="Virtual assistant"> 
 <span>Virtual assistant</span> 
+</a> 
+<a class="section-button" href="./situm.html"> 
+<img src="./hotel/situm.jpg" alt="Map view"> 
+<span>Map view</span> 
 </a> 
 <div class="section-button" onclick="navigateTo('technologyPage')"> 
 <img src="./hotel/assitance.jpg" alt="Robotic service"> 
 <span>Robotic service</span> 
 </div>
 
-<div class="section-button" id="surveyButton" onclick="navigateTo('surveyPage')"> 
-<img src="./hotel/satis.jpg" alt="Satisfaction survey"> 
-<span>Satisfaction survey</span> 
-</div> 
 </div> 
 </div> 
   
-<!-- CHECK-IN PAGE --> 
-<div id="checkinPage" class="page"> 
-<h2>Online Check-in</h2> 
-<form> 
-<label>Full Name *</label> 
-<input type="text" placeholder="e.g. John Doe" required> 
-<label>Email *</label> 
-<input type="email" placeholder="e.g. john@example.com" required> 
-<label>Reservation Number *</label> 
-<input type="text" placeholder="e.g. 123456" required> 
-<button type="submit" style="background-color: #696969;" disabled>Confirm</button>
-</form> 
-</div> 
 
-<!-- TECHNOLOGY PAGE -->
-<div id="technologyPage" class="page">
-  <h2>Book Your Automated Service</h2>
-    <div class="sections">
-  
-    <!-- Flipcard: room -->
-    <div class="flipcard">
-      <div class="flipcard-inner">
-        <div class="flipcard-front">
-          <img src="./hotel/robotfood.jpg" alt="Room service">
-          <span>Room Service</span>
-        </div>
-        <div class="flipcard-back">
-          <h3 style="color:#696969;">Room Service</h3>
-          <p> Delivers food, drinks, and amenities directly to guest rooms, quickly and efficiently.</p>
-        </div>
-      </div>
-    </div>
-
-        <!-- Flipcard: cleaning -->
-    <div class="flipcard">
-      <div class="flipcard-inner">
-        <div class="flipcard-front">
-          <img src="./hotel/robotclean.jpg" alt="Cleaning service">
-          <span>Cleaning Service</span>
-        </div>
-        <div class="flipcard-back">
-          <h3 style="color:#696969;">Cleaning service</h3>
-          <p> Keeps rooms and common areas spotless by vacuuming, mopping, and sanitizing automatically.</p>
-        </div>
-      </div>
-    </div>
-
-        <!-- Flipcard: luggage -->
-    <div class="flipcard">
-      <div class="flipcard-inner">
-        <div class="flipcard-front">
-          <img src="./hotel/robotluggage.jpg" alt="Luggage service">
-          <span>Luggage Service</span>
-        </div>
-        <div class="flipcard-back">
-          <h3 style="color:#696969;">Luggage service</h3>
-          <p> Transports guest luggage safely from lobby to rooms, reducing wait times and staff effort.
-          Also includes rooms to lobby.</p>
-        </div>
-      </div>
-    </div>
-    
-</div>
-</div>
-
-
-<!-- SURVEY PAGE --> 
-<div id="surveyPage" class="page"> 
-<h2>Satisfaction Survey</h2> 
-<form id="surveyForm"> 
-<label><strong>Overall Experience *</strong></label> 
-<div class="rating"> 
-<span>😡</span><span>😟</span><span>😐</span><span>🙂</span><span>😃</span> 
-</div> 
-<label><strong>Reservation Process *</strong></label> 
-<div class="rating"> 
-<span>😡</span><span>😟</span><span>😐</span><span>🙂</span><span>😃</span> 
-</div> 
-<label><strong>Staff *</strong></label> 
-<div class="rating"> 
-<span>😡</span><span>😟</span><span>😐</span><span>🙂</span><span>😃</span> 
-</div> 
-<label><strong>Room *</strong></label> 
-<div class="rating"> 
-<span>😡</span><span>😟</span><span>😐</span><span>🙂</span><span>😃</span> 
-</div> 
-<label><strong>Rate us *</strong></label> 
-<div class="number-rating"> 
-<button type="button">1</button><button type="button">2</button><button type="button">3</button> 
-<button type="button">4</button><button type="button">5</button><button type="button">6</button> 
-<button type="button">7</button><button type="button">8</button><button type="button">9</button> 
-<button type="button">10</button> 
-</div> 
-<label>Additional Comments</label> 
-<textarea placeholder="Your comments..."></textarea> 
-<p class="validation-message" id="surveyValidation">You have to complete all the fields.</p>
-<button type="submit" style="background-color:#696969;" disabled>Send</button>
-</form> 
-</div> 
 
 <div id="confirmModal" class="confirm-modal"> 
 <div class="confirm-modal-content"> 
@@ -398,7 +285,7 @@ button:disabled {
 </div> 
 </div> 
 
-<footer>© 2025 Barceló Valencia - Part of Barceló Hotels & Resorts</footer> 
+<footer>© 2025 Bahia Principe - Hotels & Resorts</footer> 
 
 <script>
 // --- PAGES NAVIGATION ---
